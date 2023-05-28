@@ -11,6 +11,6 @@ We will be implementing this in two different ways;
 
 Follow the workshop document at the above link and implement the solution architecture
 
-### B - Automatic Deployment using Terraform and GitHub Action
+### B - Automatic Deployment
 
 Using an the appropriate DevOps tools develop an automated CICD pipeline to deploy the solution architecture into your AWS account.
