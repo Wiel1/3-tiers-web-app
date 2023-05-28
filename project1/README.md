@@ -13,4 +13,4 @@ Follow the workshop document at the above link and implement the solution archit
 
 ### B - Automatic Deployment
 
-Using an the appropriate DevOps tools develop an automated CICD pipeline to deploy the solution architecture into your AWS account.
+Using an the appropriate DevOps tools develop an automated CICD pipeline to deploy the solution architecture into your AWS account. The GitHub repo is https://github.com/aws-samples/aws-three-tier-web-architecture-workshop
