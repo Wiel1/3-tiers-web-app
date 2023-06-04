@@ -1,3 +1,5 @@
+### During project period 1, we shall be completing two (2) projects as given below. You have until 18th June 2023 to complete and showcase your projects.
+
 
 ## Project 1 - Design and Deployment of Three-tier web architecture on AWS
 
