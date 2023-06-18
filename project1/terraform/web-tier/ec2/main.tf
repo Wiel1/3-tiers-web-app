@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_network_interface" "foo" {
-  subnet_id       = "subnet-079c560c0b21dd45b"
+  subnet_id       = "?????????????????"
   security_groups = [aws_security_group.ec2_web.id]
   tags = {
     Name = "primary_network_interface"
@@ -12,7 +12,7 @@ resource "aws_network_interface" "foo" {
 }
 
 resource "aws_instance" "foo" {
-  ami           = "ami-04f7efe62f419d9f5"
+  ami           = "??????????????"
   instance_type = "t2.micro"
 
   network_interface {
@@ -27,7 +27,7 @@ resource "aws_instance" "foo" {
 
 
 resource "aws_network_interface" "bar" {
-  subnet_id       = "subnet-079c560c0b21dd45b"
+  subnet_id       = "?????????????????????"
   security_groups = [aws_security_group.ec2_web.id]
 
   tags = {
@@ -37,7 +37,7 @@ resource "aws_network_interface" "bar" {
 
 
 resource "aws_instance" "bar" {
-  ami           = "ami-04f7efe62f419d9f5"
+  ami           = "?????????????????????????"
   instance_type = "t2.micro"
 
   network_interface {
@@ -54,7 +54,7 @@ resource "aws_instance" "bar" {
 resource "aws_security_group" "ec2_web" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-0451eaab4d3160c30"
+  vpc_id      = "???????????????????????"
 
   ingress {
     description = "TLS from VPC"
