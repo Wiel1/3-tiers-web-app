@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_network_interface" "bar" {
-  subnet_id       = "subnet-032332b62d0eba95b"
+  subnet_id       = "?????????????????????/"
   security_groups = [aws_security_group.ec2_web.id]
 
   tags = {
@@ -74,7 +74,7 @@ EOF
 resource "aws_security_group" "ec2_web" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-06472dd042cac1298"
+  vpc_id      = "???????????????????????"
 
   #ingress {
   #  description     = "TLS from VPC"
@@ -122,7 +122,7 @@ resource "aws_key_pair" "masterkey4" {
 resource "aws_security_group" "lb_sg" {
   name        = "alb_sg"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-06472dd042cac1298"
+  vpc_id      = "?????????????????????????"
 
   ingress {
     description = "TLS from VPC"
@@ -153,7 +153,7 @@ resource "aws_lb" "web-ext" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets            = ["subnet-032332b62d0eba95b", "subnet-0307daa328512c9d4"]
+  subnets            = ["??????????????????????", "??????????????????????????"]
 
   enable_deletion_protection = false
 
@@ -180,7 +180,7 @@ resource "aws_lb_target_group" "test" {
   name     = "tf-example-lb-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "vpc-06472dd042cac1298"
+  vpc_id   = "????????????????????????"
 
   health_check {
     enabled           = true
