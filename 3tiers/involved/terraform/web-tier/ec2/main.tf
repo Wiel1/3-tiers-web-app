@@ -3,8 +3,17 @@ provider "aws" {
   region = "eu-west-1"
 }
 
+data "terraform_remote_state" "remote" {
+  backend = "s3"
+  config =  {
+    bucket = "technologiesoutcomes-terraform-backend"
+    key = "3tier-baseinfra.tfstate"
+    region = "eu-west-1"
+  }
+}
+
 resource "aws_network_interface" "bar" {
-  subnet_id       = "?????????????????????/"
+  subnet_id       = "${data.terraform_remote_state.remote.outputs.public_subnets[0]}"
   security_groups = [aws_security_group.ec2_web.id]
 
   tags = {
@@ -74,7 +83,7 @@ EOF
 resource "aws_security_group" "ec2_web" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "???????????????????????"
+  vpc_id      = "${data.terraform_remote_state.remote.outputs.vpc_id}"
 
   #ingress {
   #  description     = "TLS from VPC"
@@ -122,7 +131,7 @@ resource "aws_key_pair" "masterkey4" {
 resource "aws_security_group" "lb_sg" {
   name        = "alb_sg"
   description = "Allow TLS inbound traffic"
-  vpc_id      = "?????????????????????????"
+  vpc_id      = "${data.terraform_remote_state.remote.outputs.vpc_id}"
 
   ingress {
     description = "TLS from VPC"
@@ -153,7 +162,7 @@ resource "aws_lb" "web-ext" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets            = ["??????????????????????", "??????????????????????????"]
+  subnets            = ["${data.terraform_remote_state.remote.outputs.public_subnets[0]}", "${data.terraform_remote_state.remote.outputs.public_subnets[1]}"]
 
   enable_deletion_protection = false
 
@@ -180,7 +189,7 @@ resource "aws_lb_target_group" "test" {
   name     = "tf-example-lb-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "????????????????????????"
+  vpc_id   = "${data.terraform_remote_state.remote.outputs.vpc_id}"
 
   health_check {
     enabled           = true
