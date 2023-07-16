@@ -1,4 +1,4 @@
-# Assignment11
+# Project SimpleEC2
 
 Read the below in its entirety carefully before starting the implementation. Draw conceptualisation diagrams to make sure you have understood the requirements. Draft an implementation tasks list with each task clearly described and in roughly the order in which it will be implemented.
 ONLY when you are satisfied with your pre implementation planning should you begin to implement.
