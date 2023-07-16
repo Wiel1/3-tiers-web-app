@@ -69,12 +69,26 @@ For the Backend instance use user data script to install ALL these following app
 4) Ensure you can log into to the instance using SSH keys - (the ssh user is ubuntu)
 
 5) Using the concept of partial configuration initialise the Terraform codebase for the test environment and then provision the test resources.
+Example
+```
+terraform init \
+    -backend-config="bucket=technologiesoutcomes-terraform-backend-test"
+terraform apply --var-file=./env/test/terraform.tfvars
+
+```
 
 6) Using the concept of partial configuration initialise the Terraform codebase for the prd environment and then provision the prd resources.
+Example
+```
+terraform init \
+    -backend-config="bucket=technologiesoutcomes-terraform-backend-prd"
+terraform apply --var-file=./env/prd/terraform.tfvars
 
-7) Log onto the servers and the  AWS console to perform post-implementation verifications checks.
+```
 
-8) Remember to DESTROY all the resources (using terraform destroy)
+8) Log onto the servers and the  AWS console to perform post-implementation verifications checks.
+
+9) Remember to DESTROY all the resources (using terraform destroy)
 
 References
 ===========
