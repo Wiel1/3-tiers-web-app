@@ -4,5 +4,5 @@
 * Make a list of all the tools used in the articles and describe them in as much details as you can.
 
 * Implement the architecture
-* 
+  
 * Don't forget to destroy the architecture
