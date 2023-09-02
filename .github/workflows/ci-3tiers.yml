@@ -7,7 +7,7 @@ on:
       tfpath:
         description: 'TF File Path'     
         required: false
-        default: 'terraform/phase1'
+        default: '3tiers/layered/terraform/base-infra'
   push:
     branches: [ main ]
   pull_request:
