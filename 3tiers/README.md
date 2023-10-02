@@ -1,4 +1,4 @@
-### During project period 1, we shall be completing two (2) projects as given below. You have until 18th June 2023 to complete and showcase your projects.
+### During project period 1, we shall be completing two (2) projects as given below.
 
 
 ## Project 1 - Design and Deployment of Three-tier web architecture on AWS
@@ -16,13 +16,6 @@ Follow the workshop document at the above link and implement the solution archit
 ### B - Automatic Deployment
 
 Using an the appropriate DevOps tools develop an automated CICD pipeline to deploy the solution architecture into your AWS account. The GitHub repo is https://github.com/aws-samples/aws-three-tier-web-architecture-workshop
-
-
-## Project 2 - Design and Deployment of Three-tier web architecture on AWS
-
-Deploy this Three-tier topology VPC in your account using the CloudFormation template in this github repository. Make sure you read the script in the script folder well before you use it. 
-
-https://github.com/aws-samples/vpc-multi-tier
 
 
 NOTE:  DONT FORGET to delete any resources that you have created that may incur costs.
